@@ -1,0 +1,4 @@
+SET / GET / TTL: active 60
+HSET / HINCRBY / HGETALL: {'completed': '3', 'total': '4'}
+ZADD / ZINCRBY / ZREVRANGE: [('student:2', 95.0), ('student:3', 90.0), ('student:1', 65.0)]
+Redis: 7.4.2

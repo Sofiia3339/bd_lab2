@@ -1,0 +1,24 @@
+{
+  "postgresql": "16.2",
+  "postgresql_fsync": "on",
+  "postgresql_shared_buffers": "128MB",
+  "postgresql_full_page_writes": "on",
+  "mongodb_cache_limit_bytes": 536870912,
+  "postgresql_synchronous_commit": "on",
+  "mongodb": "7.0.23",
+  "mongodb_write_concern": {
+    "j": true,
+    "w": 1
+  },
+  "platform": "Linux x86_64",
+  "python": "3.12.14",
+  "sizes": [
+    2000,
+    20000,
+    100000
+  ],
+  "rounds": 5,
+  "reads_per_round_per_scenario": 250,
+  "writes_per_round": 100,
+  "seed": 42
+}

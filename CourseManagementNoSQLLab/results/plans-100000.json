@@ -1,0 +1,626 @@
+{
+  "postgresql": {
+    "by_id": [
+      {
+        "Plan": {
+          "Node Type": "Index Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Scan Direction": "Forward",
+          "Index Name": "sessions_pkey",
+          "Relation Name": "sessions",
+          "Alias": "s",
+          "Startup Cost": 0.29,
+          "Total Cost": 70.15,
+          "Plan Rows": 1,
+          "Plan Width": 32,
+          "Actual Startup Time": 0.104,
+          "Actual Total Time": 0.105,
+          "Actual Rows": 1,
+          "Actual Loops": 1,
+          "Index Cond": "(id = 50000)",
+          "Rows Removed by Index Recheck": 0,
+          "Shared Hit Blocks": 23,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Plans": [
+            {
+              "Node Type": "Aggregate",
+              "Strategy": "Plain",
+              "Partial Mode": "Simple",
+              "Parent Relationship": "SubPlan",
+              "Subplan Name": "SubPlan 2",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 61.82,
+              "Total Cost": 61.83,
+              "Plan Rows": 1,
+              "Plan Width": 32,
+              "Actual Startup Time": 0.085,
+              "Actual Total Time": 0.085,
+              "Actual Rows": 1,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 20,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Index Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Scan Direction": "Forward",
+                  "Index Name": "attempts_pkey",
+                  "Relation Name": "attempts",
+                  "Alias": "a",
+                  "Startup Cost": 0.42,
+                  "Total Cost": 13.74,
+                  "Plan Rows": 4,
+                  "Plan Width": 20,
+                  "Actual Startup Time": 0.006,
+                  "Actual Total Time": 0.007,
+                  "Actual Rows": 4,
+                  "Actual Loops": 1,
+                  "Index Cond": "(session_id = s.id)",
+                  "Rows Removed by Index Recheck": 0,
+                  "Shared Hit Blocks": 4,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                },
+                {
+                  "Node Type": "Aggregate",
+                  "Strategy": "Plain",
+                  "Partial Mode": "Simple",
+                  "Parent Relationship": "SubPlan",
+                  "Subplan Name": "SubPlan 1",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 12.01,
+                  "Total Cost": 12.02,
+                  "Plan Rows": 1,
+                  "Plan Width": 32,
+                  "Actual Startup Time": 0.011,
+                  "Actual Total Time": 0.011,
+                  "Actual Rows": 1,
+                  "Actual Loops": 4,
+                  "Shared Hit Blocks": 16,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0,
+                  "Plans": [
+                    {
+                      "Node Type": "Index Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Scan Direction": "Forward",
+                      "Index Name": "answers_pkey",
+                      "Relation Name": "answers",
+                      "Alias": "q",
+                      "Startup Cost": 0.43,
+                      "Total Cost": 11.99,
+                      "Plan Rows": 3,
+                      "Plan Width": 9,
+                      "Actual Startup Time": 0.003,
+                      "Actual Total Time": 0.003,
+                      "Actual Rows": 3,
+                      "Actual Loops": 4,
+                      "Index Cond": "((session_id = a.session_id) AND (attempt_position = a.\"position\"))",
+                      "Rows Removed by Index Recheck": 0,
+                      "Shared Hit Blocks": 16,
+                      "Shared Read Blocks": 0,
+                      "Shared Dirtied Blocks": 0,
+                      "Shared Written Blocks": 0,
+                      "Local Hit Blocks": 0,
+                      "Local Read Blocks": 0,
+                      "Local Dirtied Blocks": 0,
+                      "Local Written Blocks": 0,
+                      "Temp Read Blocks": 0,
+                      "Temp Written Blocks": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.131,
+        "Triggers": [],
+        "Execution Time": 0.125
+      }
+    ],
+    "recent_10": [
+      {
+        "Plan": {
+          "Node Type": "Subquery Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Alias": "s",
+          "Startup Cost": 0.42,
+          "Total Cost": 660.92,
+          "Plan Rows": 10,
+          "Plan Width": 44,
+          "Actual Startup Time": 0.15,
+          "Actual Total Time": 0.839,
+          "Actual Rows": 10,
+          "Actual Loops": 1,
+          "Shared Hit Blocks": 215,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Plans": [
+            {
+              "Node Type": "Limit",
+              "Parent Relationship": "Subquery",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 0.42,
+              "Total Cost": 42.54,
+              "Plan Rows": 10,
+              "Plan Width": 20,
+              "Actual Startup Time": 0.009,
+              "Actual Total Time": 0.021,
+              "Actual Rows": 10,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 13,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Index Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Scan Direction": "Forward",
+                  "Index Name": "sessions_student_recent_idx",
+                  "Relation Name": "sessions",
+                  "Alias": "sessions",
+                  "Startup Cost": 0.42,
+                  "Total Cost": 84.67,
+                  "Plan Rows": 20,
+                  "Plan Width": 20,
+                  "Actual Startup Time": 0.009,
+                  "Actual Total Time": 0.02,
+                  "Actual Rows": 10,
+                  "Actual Loops": 1,
+                  "Index Cond": "(student_id = '1'::smallint)",
+                  "Rows Removed by Index Recheck": 0,
+                  "Shared Hit Blocks": 13,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                }
+              ]
+            },
+            {
+              "Node Type": "Aggregate",
+              "Strategy": "Plain",
+              "Partial Mode": "Simple",
+              "Parent Relationship": "SubPlan",
+              "Subplan Name": "SubPlan 2",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 61.82,
+              "Total Cost": 61.83,
+              "Plan Rows": 1,
+              "Plan Width": 32,
+              "Actual Startup Time": 0.074,
+              "Actual Total Time": 0.074,
+              "Actual Rows": 1,
+              "Actual Loops": 10,
+              "Shared Hit Blocks": 202,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Index Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Scan Direction": "Forward",
+                  "Index Name": "attempts_pkey",
+                  "Relation Name": "attempts",
+                  "Alias": "a",
+                  "Startup Cost": 0.42,
+                  "Total Cost": 13.74,
+                  "Plan Rows": 4,
+                  "Plan Width": 20,
+                  "Actual Startup Time": 0.009,
+                  "Actual Total Time": 0.01,
+                  "Actual Rows": 4,
+                  "Actual Loops": 10,
+                  "Index Cond": "(session_id = s.id)",
+                  "Rows Removed by Index Recheck": 0,
+                  "Shared Hit Blocks": 41,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                },
+                {
+                  "Node Type": "Aggregate",
+                  "Strategy": "Plain",
+                  "Partial Mode": "Simple",
+                  "Parent Relationship": "SubPlan",
+                  "Subplan Name": "SubPlan 1",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 12.01,
+                  "Total Cost": 12.02,
+                  "Plan Rows": 1,
+                  "Plan Width": 32,
+                  "Actual Startup Time": 0.01,
+                  "Actual Total Time": 0.01,
+                  "Actual Rows": 1,
+                  "Actual Loops": 40,
+                  "Shared Hit Blocks": 161,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0,
+                  "Plans": [
+                    {
+                      "Node Type": "Index Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Scan Direction": "Forward",
+                      "Index Name": "answers_pkey",
+                      "Relation Name": "answers",
+                      "Alias": "q",
+                      "Startup Cost": 0.43,
+                      "Total Cost": 11.99,
+                      "Plan Rows": 3,
+                      "Plan Width": 9,
+                      "Actual Startup Time": 0.002,
+                      "Actual Total Time": 0.003,
+                      "Actual Rows": 3,
+                      "Actual Loops": 40,
+                      "Index Cond": "((session_id = a.session_id) AND (attempt_position = a.\"position\"))",
+                      "Rows Removed by Index Recheck": 0,
+                      "Shared Hit Blocks": 161,
+                      "Shared Read Blocks": 0,
+                      "Shared Dirtied Blocks": 0,
+                      "Shared Written Blocks": 0,
+                      "Local Hit Blocks": 0,
+                      "Local Read Blocks": 0,
+                      "Local Dirtied Blocks": 0,
+                      "Local Written Blocks": 0,
+                      "Temp Read Blocks": 0,
+                      "Temp Written Blocks": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.106,
+        "Triggers": [],
+        "Execution Time": 0.86
+      }
+    ]
+  },
+  "mongodb": {
+    "by_id": {
+      "explainVersion": "1",
+      "queryPlanner": {
+        "namespace": "course_nosql_lab.study_sessions",
+        "indexFilterSet": false,
+        "parsedQuery": {
+          "_id": {
+            "$eq": 50000
+          }
+        },
+        "queryHash": "869CED4F",
+        "planCacheKey": "658319D6",
+        "optimizationTimeMillis": 0,
+        "maxIndexedOrSolutionsReached": false,
+        "maxIndexedAndSolutionsReached": false,
+        "maxScansToExplodeReached": false,
+        "winningPlan": {
+          "stage": "IDHACK"
+        },
+        "rejectedPlans": []
+      },
+      "executionStats": {
+        "executionSuccess": true,
+        "nReturned": 1,
+        "executionTimeMillis": 0,
+        "totalKeysExamined": 1,
+        "totalDocsExamined": 1,
+        "executionStages": {
+          "stage": "IDHACK",
+          "nReturned": 1,
+          "executionTimeMillisEstimate": 0,
+          "works": 2,
+          "advanced": 1,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keysExamined": 1,
+          "docsExamined": 1
+        }
+      },
+      "command": {
+        "find": "study_sessions",
+        "filter": {
+          "_id": 50000
+        },
+        "$db": "course_nosql_lab"
+      },
+      "serverInfo": {
+        "host": "fda206d1d356",
+        "port": 57017,
+        "version": "7.0.23",
+        "gitVersion": "78d6d71385be23831b5971993af60bcafed785bc"
+      },
+      "serverParameters": {
+        "internalQueryFacetBufferSizeBytes": 104857600,
+        "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+        "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+        "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+        "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+        "internalQueryProhibitBlockingMergeOnMongoS": 0,
+        "internalQueryMaxAddToSetBytes": 104857600,
+        "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+        "internalQueryFrameworkControl": "forceClassicEngine"
+      },
+      "ok": 1.0
+    },
+    "recent_10": {
+      "explainVersion": "1",
+      "queryPlanner": {
+        "namespace": "course_nosql_lab.study_sessions",
+        "indexFilterSet": false,
+        "parsedQuery": {
+          "student_id": {
+            "$eq": 1
+          }
+        },
+        "queryHash": "AA479589",
+        "planCacheKey": "BA70F552",
+        "optimizationTimeMillis": 0,
+        "maxIndexedOrSolutionsReached": false,
+        "maxIndexedAndSolutionsReached": false,
+        "maxScansToExplodeReached": false,
+        "winningPlan": {
+          "stage": "LIMIT",
+          "limitAmount": 10,
+          "inputStage": {
+            "stage": "FETCH",
+            "inputStage": {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "student_id": 1,
+                "started_at": -1,
+                "_id": -1
+              },
+              "indexName": "student_recent_idx",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "student_id": [],
+                "started_at": [],
+                "_id": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "student_id": [
+                  "[1, 1]"
+                ],
+                "started_at": [
+                  "[MaxKey, MinKey]"
+                ],
+                "_id": [
+                  "[MaxKey, MinKey]"
+                ]
+              }
+            }
+          }
+        },
+        "rejectedPlans": []
+      },
+      "executionStats": {
+        "executionSuccess": true,
+        "nReturned": 10,
+        "executionTimeMillis": 0,
+        "totalKeysExamined": 10,
+        "totalDocsExamined": 10,
+        "executionStages": {
+          "stage": "LIMIT",
+          "nReturned": 10,
+          "executionTimeMillisEstimate": 0,
+          "works": 11,
+          "advanced": 10,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "limitAmount": 10,
+          "inputStage": {
+            "stage": "FETCH",
+            "nReturned": 10,
+            "executionTimeMillisEstimate": 0,
+            "works": 10,
+            "advanced": 10,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 0,
+            "docsExamined": 10,
+            "alreadyHasObj": 0,
+            "inputStage": {
+              "stage": "IXSCAN",
+              "nReturned": 10,
+              "executionTimeMillisEstimate": 0,
+              "works": 10,
+              "advanced": 10,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 0,
+              "keyPattern": {
+                "student_id": 1,
+                "started_at": -1,
+                "_id": -1
+              },
+              "indexName": "student_recent_idx",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "student_id": [],
+                "started_at": [],
+                "_id": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "student_id": [
+                  "[1, 1]"
+                ],
+                "started_at": [
+                  "[MaxKey, MinKey]"
+                ],
+                "_id": [
+                  "[MaxKey, MinKey]"
+                ]
+              },
+              "keysExamined": 10,
+              "seeks": 1,
+              "dupsTested": 0,
+              "dupsDropped": 0
+            }
+          }
+        }
+      },
+      "command": {
+        "find": "study_sessions",
+        "filter": {
+          "student_id": 1
+        },
+        "sort": {
+          "started_at": -1,
+          "_id": -1
+        },
+        "limit": 10,
+        "$db": "course_nosql_lab"
+      },
+      "serverInfo": {
+        "host": "fda206d1d356",
+        "port": 57017,
+        "version": "7.0.23",
+        "gitVersion": "78d6d71385be23831b5971993af60bcafed785bc"
+      },
+      "serverParameters": {
+        "internalQueryFacetBufferSizeBytes": 104857600,
+        "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+        "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+        "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+        "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+        "internalQueryProhibitBlockingMergeOnMongoS": 0,
+        "internalQueryMaxAddToSetBytes": 104857600,
+        "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+        "internalQueryFrameworkControl": "forceClassicEngine"
+      },
+      "ok": 1.0
+    }
+  }
+}
